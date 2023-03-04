@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHero App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="getAll()">
+    <header>
+        <a href="#" class="logo">
+            <img src="images/download.jpg" alt="">
+        </a>
+        <form method="GET" onsubmit="fetch()" class="search-input"id="form" >
+            <div class="form-group">
+                <input type="text" class="form-control" id="user-input" placeholder="Enter Superhero Name">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </div>
+        </form>
+        <a class="favourites" href="#"> Favourites</a>
+    </header>
+    <section class="main-home">
+        <div class="main-text">
+            <h5>Marvel's</h5>
+            <h1>Superhero <br> Hunter</h1>
+        </div>
+    </section>
+    <!-- heroes section -->
+    <section class="superheroes-section" id="superheroes-section">
+        <div class="center-text">
+            <h2>Super<span>heroes</span></h2>
+        </div>
+        <div class="superhero">
+            <!-- <div class="row">
+                <img src="images/Crazy-pug_size480.jpg" alt="">
+                <div class="hero-name">
+                    <h1>Batman</h1>
+                </div>
+                <div class="heart-icon">
+                    <i class="fas fa-heart heart-icon"></i>
+                </div>
+                <div class="more-info">
+                    <i class="fas fa-info" id="more-info"></i>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/Cute-Baby_size480.jpg" alt="">
+                <div class="hero-name">
+                    <h1>Batman</h1>
+                </div>
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="more-info">
+                    <i class="fas fa-info" id="more-info"></i>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/Cute-Dog_size480.jpg" alt="">
+                <div class="hero-name">
+                    <h1>Batman</h1>
+                </div>
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="more-info">
+                    <i class="fas fa-info" id="more-info"></i>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/Iphone-_size480.jpg" alt="">
+                <div class="hero-name">
+                    <h1>Batman</h1>
+                </div>
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="more-info">
+                    <i class="fas fa-info" id="more-info"></i>
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/The-Dark-Knight_size480.jpg" alt="">
+                <div class="hero-name">
+                    <h1>Batman</h1>
+                </div>
+                <div class="heart-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="more-info">
+                    <i class="fas fa-info" id="more-info"></i>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
