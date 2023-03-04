@@ -13,21 +13,21 @@ window.addEventListener("scroll", function () {
 //   ).toString()
 // );
 
-function fetch() {
-  var url = getUrl();
-  console.log(url);
+function getAll() {
+  var url =
+    "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=7c6d0ba7a6a8eba22f225d33d5adba3f&hash=1cb87892a3e91f8474f97b26817854c6&limit=100";
   xhrRequest.open("get", url, true);
   xhrRequest.send();
   xhrRequest.onload = function () {
     var data = JSON.parse(xhrRequest.responseText);
-    console.log(data);
-    // display(data);
+    addHeros(data.data.results);
   };
 }
 
-function getAll() {
-  var url =
-    "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=7c6d0ba7a6a8eba22f225d33d5adba3f&hash=1cb87892a3e91f8474f97b26817854c6";
+function getByInput() {
+  var name = document.getElementById("user-input").value;
+  var url = `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=7c6d0ba7a6a8eba22f225d33d5adba3f&hash=1cb87892a3e91f8474f97b26817854c6&limit=100&nameStartsWith=${name}`;
+  console.log(url);
   xhrRequest.open("get", url, true);
   xhrRequest.send();
   xhrRequest.onload = function () {
@@ -40,20 +40,40 @@ function getAll() {
 function addHeros(heroes) {
   console.log("inside heroes", heroes);
 
-  let parentDiv = document.querySelector("superhero");
+  let parentDiv = document.getElementsByClassName("superhero");
 
-  for (var i = 0; i < heroes.length; i++) {
-    console.log(i);
-  }
-  let childDiv = document.createElement("div");
+  let pdiv = parentDiv[0];
 
-  childDiv.innerHTML = `
-  <span class="todo-item"></span>
-  <button name="checkButton"><i class="fas fa-check-square"></i></button>
-  <button name="deleteButton"><i class="fas fa-trash"></i></button>
+  heroes.forEach((hero) => {
+    let childDiv = document.createElement("div");
+
+    childDiv.innerHTML = `
+  <img src="${hero.thumbnail.path}.${hero.thumbnail.extension}">
+    <div class="hero-name">
+        <h1>${hero.name}</h1>
+    </div>
+    <div class="heart-icon">
+        <i id="${hero.id}" onclick="addFavourite(${hero.id})" class="fas fa-heart heart-icon"></i>
+    </div>
+    <div class="more-info">
+        <i id="${hero.id}" class="fas fa-info"  onclick="showDetailsInMoreInfoPage(${hero.id})" ></i>
+    </div>
   `;
 
-  childDiv.classList.add("row");
-  parentDiv.appendChild(li);
-  // todoCount();
+    childDiv.classList.add("row");
+    pdiv.appendChild(childDiv);
+  });
+}
+
+function removeHeroes() {
+  let parentDiv = document.getElementsByClassName("superhero");
+
+  let pdiv = parentDiv[0];
+
+  pdiv.innerHTML = "";
+  getByInput();
+}
+function showDetailsInMoreInfoPage(id) {
+  localStorage.setItem("id", id);
+  window.location.assign("./moreinfo.html");
 }
