@@ -36,8 +36,6 @@ function getByInput() {
 }
 
 function addHeros(heroes) {
-  // console.log("inside heroes", heroes);
-
   let parentDiv = document.getElementsByClassName("superhero");
 
   let pdiv = parentDiv[0];

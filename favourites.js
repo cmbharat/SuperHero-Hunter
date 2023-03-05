@@ -12,8 +12,6 @@ function favouritesDetails(favourites) {
     let childDiv = document.createElement("div");
 
     childDiv.innerHTML = `<h1 style="text-align: center">No Superheros to Display Please Add Some</h1>`;
-
-    // childDiv.classList.add("row");
     pdiv.appendChild(childDiv);
   }
 
