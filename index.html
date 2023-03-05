@@ -16,18 +16,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="getAll()">
+<body onload="getAll()" class="main-class">
+
     <header>
         <a href="#" class="logo">
-            <img src="images/download.jpg" alt="">
+            <img src="images/bg.png" alt="">
         </a>
-        <form method="GET" onsubmit="removeHeroes()" class="search-input"id="form" >
-            <div class="form-group">
-                <input type="text" class="form-control" id="user-input" placeholder="Enter Superhero Name">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+        <div class="form-group">
+            <!-- <input type="text" class="form-control" id="user-input" placeholder="Enter Superhero Name">
+            <button class="btn btn-outline-success" type="submit" onclick="removeHeroes()">Search</button> -->
+            <div class="searchbar">
+                <input class="search_input" id="user-input" type="text" name="" placeholder="Enter Superhero Name to Search...">
+                <a onclick="removeHeroes()" class="search_icon"><i class="fas fa-search"></i></a>
             </div>
-        </form>
-        <a class="favourites" href="#"> Favourites</a>
+        </div>
+        <a class="favourites" href="favourites.html"> Favourites</a>
     </header>
     <section class="main-home">
         <div class="main-text">
@@ -35,6 +38,7 @@
             <h1>Superhero <br> Hunter</h1>
         </div>
     </section>
+
     <!-- heroes section -->
     <section class="superheroes-section" id="superheroes-section">
         <div class="center-text">
@@ -44,7 +48,7 @@
         </div>
     </section>
     <script src="app.js"></script>
-    <script src="favourites.js"></script>
+    <!-- <script src="api.js"></script> -->
 </body>
 
 </html>
