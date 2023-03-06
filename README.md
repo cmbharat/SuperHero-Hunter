@@ -16,9 +16,11 @@
    - have brief Description of the superhero fetched from marvel api. 
    -link to redirect to home page.
    -link to redirect to favourites page.
+
 **Favourites screen**
    - Display list of all the favourite superheroes
    -remove buttons , clicking on which , superheroes from the favourites page will be removed .
    -link to redirect to home page.
+
 **apis**
   -marvel apis are being used to fetch marvel all characters,characters whose names start from input given in search box, and to fetch  the character as per the characterid 
